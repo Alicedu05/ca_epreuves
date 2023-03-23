@@ -13,16 +13,15 @@
 
 chiffres = ARGV
 e = "erreur"
+
 def transformer(*args) #nom de ma methode plus paramètres
   args.map(&:to_i) #renvoi un tableau d'integer pour chaque args passé à la methode
 end
 resultat = transformer(ARGV[0], ARGV[1]) # passer à la methode les arguments pour qu'elle les transformes
-#puts resultat.inspect
 
 a = resultat[0]
 b = resultat[1]
-
-if a >= b && a > 0 && b > 0 && 
+if a >= b && a > 0 && b > 0 
 	reste = a % b
 	resultat = (a - reste)/b
 	puts "résultat: #{resultat}"
