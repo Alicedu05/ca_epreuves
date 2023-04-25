@@ -12,14 +12,24 @@
 
 c = ARGV[0].to_f
 r = c**(1.0/2) #racine
-
-(2..r).each do |i|
-   if c % i == 0
-        puts "Non, #{c} n’est pas un nombre premier."
-        exit
-    else
-        puts "Oui, #{c} est un nombre premier."
-        exit
+#puts r
+if ARGV.empty?
+        puts " *** Vous n'avez pas saisi d'arguments *** "
+elsif ARGV.size > 1
+        puts " *** Vous n'avez trop d'arguments *** "
+elsif ARGV[0].match(/[a-zA-Z]/)
+        puts " *** Vous devez saisir un chiffre en d'arguments *** "
+elsif c < 2
+        puts " *** Attention, l'argument doit etre un chiffre positif et supperieur à 1 *** "
+else
+    (2..r).each do |i|
+            if c % i == 0
+                puts "Non, #{c} n’est pas un nombre premier."
+                exit
+            else
+                puts "Oui, #{c} est un nombre premier."
+                exit
+            end
     end
 end
 
