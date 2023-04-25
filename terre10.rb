@@ -12,13 +12,13 @@
 
 c = ARGV[0].to_f
 r = c**(1.0/2) #racine
-#puts r
+
 if ARGV.empty?
         puts " *** Vous n'avez pas saisi d'arguments *** "
 elsif ARGV.size > 1
-        puts " *** Vous n'avez trop d'arguments *** "
+        puts " *** Vous avez saisi trop d'arguments *** "
 elsif ARGV[0].match(/[a-zA-Z]/)
-        puts " *** Vous devez saisir un chiffre en d'arguments *** "
+        puts " *** Vous devez saisir un chiffre en d'arguments, non une lettre *** "
 elsif c < 2
         puts " *** Attention, l'argument doit etre un chiffre positif et supperieur à 1 *** "
 else
