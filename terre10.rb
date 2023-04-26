@@ -9,30 +9,31 @@
 #Non, 6 n’est pas un nombre premier.
 #Attention : 0 et 1 ne sont pas des nombres premiers. Gérez les erreurs d’arguments.
 
-
-c = ARGV[0].to_f
-r = c**(1.0/2) #racine
-
+chiffre_argument = ARGV[0].to_f
+racine_chiffre = chiffre_argument**(1.0/2) #racine
+#puts r
 if ARGV.empty?
         puts " *** Vous n'avez pas saisi d'arguments *** "
 elsif ARGV.size > 1
-        puts " *** Vous avez saisi trop d'arguments *** "
+        puts " *** Vous n'avez trop d'arguments *** "
 elsif ARGV[0].match(/[a-zA-Z]/)
-        puts " *** Vous devez saisir un chiffre en d'arguments, non une lettre *** "
-elsif c < 2
+        puts " *** Vous devez saisir un chiffre en d'arguments non une lettre *** "
+elsif chiffre_argument < 2
         puts " *** Attention, l'argument doit etre un chiffre positif et supperieur à 1 *** "
+elsif racine_chiffre <= 1.99 #pas foufou
+                puts "Oui, #{chiffre_argument.to_i} est un nombre premier."
+                exit
 else
-    (2..r).each do |i|
-            if c % i == 0
-                puts "Non, #{c} n’est pas un nombre premier."
+    (2..racine_chiffre).each do |i|
+           if chiffre_argument % i == 0
+                puts "Non, #{chiffre_argument.to_i} n’est pas un nombre premier."
                 exit
             else
-                puts "Oui, #{c} est un nombre premier."
+                puts "Oui, #{chiffre_argument.to_i} est un nombre premier."
                 exit
             end
     end
 end
-
 
 
 
