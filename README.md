@@ -1,4 +1,4 @@
-# ca_epreuves
+# ca_epreuves_terre
 
 Ici ce trouve l’ensemble des fichiers correspondant aux différents exercices de la terre.
 Chaque fichier est a executer avec des arguments comme suit :
